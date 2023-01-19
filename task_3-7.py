@@ -89,122 +89,152 @@ abacabadaba
 dacabac
 '''
 
-s = str(input())
+# s = str(input())
+#
+# a = []
+#
+# # строка, которую необходимо зашифровать
+#
+# for i in range(len(s)):
+#     si = s[i]
+#
+#     a.append(si)
+#
+# # print(a)
+#
+# b = []
+#
+# n = str(input())
+#
+# # символы шифра
+#
+# for j in range(len(n)):
+#     sj = n[j]
+#
+#     b.append(sj)
+#
+# # print(b)
+#
+# p = {}
+#
+# # инициализация словаря
+#
+# for pi in range(len(s)):
+#     key = s[pi]
+#
+#     p[key] = 0
+#
+# # print(p)
+#
+# # актуализация словаря
+#
+# j1 = 0
+#
+# for i in range(0, len(a)):
+#
+#     key = a[i]
+#
+#     while j1 < len(b):
+#
+#         # print(j1)
+#
+#         bj = b[0]
+#
+#         if key in p:
+#             p[key] = bj
+#
+#         b.remove(bj)
+#
+#         # print(b)
+#
+#         break
+#
+# # print(p)
+#
+# c = []
+#
+# si = str(input())
+#
+# for si1 in range(0, len(si)):
+#     ci = si[si1]
+#
+#     c.append(ci)
+#
+# # print(c)
+#
+# co = []
+#
+# for ci in range(0, len(c)):
+#
+#     if c[ci] in p:
+#         cco = c[ci]
+#
+#         pco = p[cco]
+#
+#         co.append(pco)
+#
+# # print(co)
+#
+# d = []
+#
+# di = str(input())
+#
+# for sj1 in range(0, len(di)):
+#     dj = di[sj1]
+#
+#     d.append(dj)
+#
+# # print(d)
+#
+# do = []
+#
+# for di in range(0, len(d)):
+#
+#     for key in p:
+#
+#         pkey = key
+#
+#         if p.get(key) == d[di]:
+#             ddo = pkey
+#
+#             do.append(ddo)
+#
+# # print(do)
+#
+# for i in range(0, len(co)):
+#     print(co[i], end='')
+#
+# print()
+#
+# for j in range(0, len(do)):
+#     print(do[j], end='')
 
-a = []
 
-# строка, которую необходимо зашифровать
+'''
+Простейшая система проверки орфографии может быть основана на использовании списка известных слов.
+Если введённое слово не найдено в этом списке, оно помечается как "ошибка".
 
-for i in range(len(s)):
-    si = s[i]
+Попробуем написать подобную систему.
 
-    a.append(si)
+На вход программе первой строкой передаётся количество dd известных нам слов, после чего на dd строках указываются эти слова. Затем передаётся количество ll строк текста для проверки, после чего ll строк текста.
 
-# print(a)
+Выведите уникальные "ошибки" в произвольном порядке. Работу производите без учёта регистра.
+'''
 
+a = int(input())
 b = []
+for i in range(a):
+    x = input().lower()
+    if x not in b:
+        b.append(x)
 
-n = str(input())
+d = int(input())
+e = []
+for j in range(d):
+    x = input().lower().split()
+    for i in x:
+        if i not in b and i not in e:
+            e.append(i)
 
-# символы шифра
+print('\n'.join(e))
 
-for j in range(len(n)):
-    sj = n[j]
-
-    b.append(sj)
-
-# print(b)
-
-p = {}
-
-# инициализация словаря
-
-for pi in range(len(s)):
-    key = s[pi]
-
-    p[key] = 0
-
-# print(p)
-
-# актуализация словаря
-
-j1 = 0
-
-for i in range(0, len(a)):
-
-    key = a[i]
-
-    while j1 < len(b):
-
-        # print(j1)
-
-        bj = b[0]
-
-        if key in p:
-            p[key] = bj
-
-        b.remove(bj)
-
-        # print(b)
-
-        break
-
-# print(p)
-
-c = []
-
-si = str(input())
-
-for si1 in range(0, len(si)):
-    ci = si[si1]
-
-    c.append(ci)
-
-# print(c)
-
-co = []
-
-for ci in range(0, len(c)):
-
-    if c[ci] in p:
-        cco = c[ci]
-
-        pco = p[cco]
-
-        co.append(pco)
-
-# print(co)
-
-d = []
-
-di = str(input())
-
-for sj1 in range(0, len(di)):
-    dj = di[sj1]
-
-    d.append(dj)
-
-# print(d)
-
-do = []
-
-for di in range(0, len(d)):
-
-    for key in p:
-
-        pkey = key
-
-        if p.get(key) == d[di]:
-            ddo = pkey
-
-            do.append(ddo)
-
-# print(do)
-
-for i in range(0, len(co)):
-    print(co[i], end='')
-
-print()
-
-for j in range(0, len(do)):
-    print(do[j], end='')

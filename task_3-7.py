@@ -16,44 +16,44 @@
 # Порядок вывода команд произвольный.
 # '''
 #
-# n = int(input())
-# teams = {}
-# for i in range(n):
-#     team1, goal1, team2, goal2 = input().split(';')
-#
-#     if team1 not in teams:
-#         teams[team1] = {'plays': 0, 'wins': 0, 'draws': 0, 'loses': 0, 'score': 0}
-#
-#     if team2 not in teams:
-#         teams[team2] = {'plays': 0, 'wins': 0, 'draws': 0, 'loses': 0, 'score': 0}
-#
-#     if goal1 > goal2:  # team1 wins
-#         teams[team1]['wins'] += 1
-#         teams[team1]['score'] += 3
-#
-#         teams[team2]['loses'] += 1
-#         teams[team2]['score'] += 0
-#
-#     elif goal2 > goal1:  # team2 wins
-#         teams[team1]['loses'] += 1
-#         teams[team1]['score'] += 0
-#
-#         teams[team2]['wins'] += 1
-#         teams[team2]['score'] += 3
-#
-#     elif goal1 == goal2:  # draw
-#         teams[team1]['draws'] += 1
-#         teams[team1]['score'] += 1
-#
-#         teams[team2]['draws'] += 1
-#         teams[team2]['score'] += 1
-#
-#     teams[team1]['plays'] += 1
-#     teams[team2]['plays'] += 1
-#
-# for team in teams:
-#     values_order = ['plays', 'wins', 'draws', 'loses', 'score']
-#     print("{}:{}".format(str(team), ' '.join([str(teams[team][key]) for key in values_order])))
+n = int(input())
+teams = {}
+for i in range(n):
+    team1, goal1, team2, goal2 = input().split(';')
+
+    if team1 not in teams:
+        teams[team1] = {'plays': 0, 'wins': 0, 'draws': 0, 'loses': 0, 'score': 0}
+
+    if team2 not in teams:
+        teams[team2] = {'plays': 0, 'wins': 0, 'draws': 0, 'loses': 0, 'score': 0}
+
+    if goal1 > goal2:  # team1 wins
+        teams[team1]['wins'] += 1
+        teams[team1]['score'] += 3
+
+        teams[team2]['loses'] += 1
+        teams[team2]['score'] += 0
+
+    elif goal2 > goal1:  # team2 wins
+        teams[team1]['loses'] += 1
+        teams[team1]['score'] += 0
+
+        teams[team2]['wins'] += 1
+        teams[team2]['score'] += 3
+
+    elif goal1 == goal2:  # draw
+        teams[team1]['draws'] += 1
+        teams[team1]['score'] += 1
+
+        teams[team2]['draws'] += 1
+        teams[team2]['score'] += 1
+
+    teams[team1]['plays'] += 1
+    teams[team2]['plays'] += 1
+
+for team in teams:
+    values_order = ['plays', 'wins', 'draws', 'loses', 'score']
+    print("{}:{}".format(str(team), ' '.join([str(teams[team][key]) for key in values_order])))
 
 
 '''
@@ -89,125 +89,125 @@ abacabadaba
 dacabac
 '''
 
-# s = str(input())
-#
-# a = []
-#
-# # строка, которую необходимо зашифровать
-#
-# for i in range(len(s)):
-#     si = s[i]
-#
-#     a.append(si)
-#
-# # print(a)
-#
-# b = []
-#
-# n = str(input())
-#
-# # символы шифра
-#
-# for j in range(len(n)):
-#     sj = n[j]
-#
-#     b.append(sj)
-#
-# # print(b)
-#
-# p = {}
-#
-# # инициализация словаря
-#
-# for pi in range(len(s)):
-#     key = s[pi]
-#
-#     p[key] = 0
-#
-# # print(p)
-#
-# # актуализация словаря
-#
-# j1 = 0
-#
-# for i in range(0, len(a)):
-#
-#     key = a[i]
-#
-#     while j1 < len(b):
-#
-#         # print(j1)
-#
-#         bj = b[0]
-#
-#         if key in p:
-#             p[key] = bj
-#
-#         b.remove(bj)
-#
-#         # print(b)
-#
-#         break
-#
-# # print(p)
-#
-# c = []
-#
-# si = str(input())
-#
-# for si1 in range(0, len(si)):
-#     ci = si[si1]
-#
-#     c.append(ci)
-#
-# # print(c)
-#
-# co = []
-#
-# for ci in range(0, len(c)):
-#
-#     if c[ci] in p:
-#         cco = c[ci]
-#
-#         pco = p[cco]
-#
-#         co.append(pco)
-#
-# # print(co)
-#
-# d = []
-#
-# di = str(input())
-#
-# for sj1 in range(0, len(di)):
-#     dj = di[sj1]
-#
-#     d.append(dj)
-#
-# # print(d)
-#
-# do = []
-#
-# for di in range(0, len(d)):
-#
-#     for key in p:
-#
-#         pkey = key
-#
-#         if p.get(key) == d[di]:
-#             ddo = pkey
-#
-#             do.append(ddo)
-#
-# # print(do)
-#
-# for i in range(0, len(co)):
-#     print(co[i], end='')
-#
-# print()
-#
-# for j in range(0, len(do)):
-#     print(do[j], end='')
+s = str(input())
+
+a = []
+
+# строка, которую необходимо зашифровать
+
+for i in range(len(s)):
+    si = s[i]
+
+    a.append(si)
+
+# print(a)
+
+b = []
+
+n = str(input())
+
+# символы шифра
+
+for j in range(len(n)):
+    sj = n[j]
+
+    b.append(sj)
+
+# print(b)
+
+p = {}
+
+# инициализация словаря
+
+for pi in range(len(s)):
+    key = s[pi]
+
+    p[key] = 0
+
+# print(p)
+
+# актуализация словаря
+
+j1 = 0
+
+for i in range(0, len(a)):
+
+    key = a[i]
+
+    while j1 < len(b):
+
+        # print(j1)
+
+        bj = b[0]
+
+        if key in p:
+            p[key] = bj
+
+        b.remove(bj)
+
+        # print(b)
+
+        break
+
+# print(p)
+
+c = []
+
+si = str(input())
+
+for si1 in range(0, len(si)):
+    ci = si[si1]
+
+    c.append(ci)
+
+# print(c)
+
+co = []
+
+for ci in range(0, len(c)):
+
+    if c[ci] in p:
+        cco = c[ci]
+
+        pco = p[cco]
+
+        co.append(pco)
+
+# print(co)
+
+d = []
+
+di = str(input())
+
+for sj1 in range(0, len(di)):
+    dj = di[sj1]
+
+    d.append(dj)
+
+# print(d)
+
+do = []
+
+for di in range(0, len(d)):
+
+    for key in p:
+
+        pkey = key
+
+        if p.get(key) == d[di]:
+            ddo = pkey
+
+            do.append(ddo)
+
+# print(do)
+
+for i in range(0, len(co)):
+    print(co[i], end='')
+
+print()
+
+for j in range(0, len(do)):
+    print(do[j], end='')
 
 
 '''
@@ -221,22 +221,22 @@ dacabac
 Выведите уникальные "ошибки" в произвольном порядке. Работу производите без учёта регистра.
 '''
 
-# a = int(input())
-# b = []
-# for i in range(a):
-#     x = input().lower()
-#     if x not in b:
-#         b.append(x)
-#
-# d = int(input())
-# e = []
-# for j in range(d):
-#     x = input().lower().split()
-#     for i in x:
-#         if i not in b and i not in e:
-#             e.append(i)
-#
-# print('\n'.join(e))
+a = int(input())
+b = []
+for i in range(a):
+    x = input().lower()
+    if x not in b:
+        b.append(x)
+
+d = int(input())
+e = []
+for j in range(d):
+    x = input().lower().split()
+    for i in x:
+        if i not in b and i not in e:
+            e.append(i)
+
+print('\n'.join(e))
 
 
 '''
@@ -278,3 +278,42 @@ for i in range(n):
         #print('Ошибка ввода данных')
 print(int(a['восток'][0]) - int(a['запад'][0]), end=' ')
 print(int(a['север'][1]) - int(a['юг'][1]))
+
+
+'''
+Дан файл с таблицей в формате TSV с информацией о росте школьников разных классов.
+
+Напишите программу, которая прочитает этот файл и подсчитает для каждого класса средний рост учащегося.
+
+Файл состоит из набора строк, каждая из которых представляет собой три поля:
+Класс Фамилия Рост
+
+Класс обозначается только числом. Буквенные модификаторы не используются.
+ Номер класса может быть от 1 до 11 включительно. В фамилии нет пробелов,
+  а в качестве роста используется натуральное число, но при подсчёте среднего требуется вычислить значение в виде вещественного числа.
+
+Выводить информацию о среднем росте следует в порядке возрастания номера 
+
+класса (для классов с первого по одиннадцатый). Если про какой-то класс нет информации,
+ необходимо вывести напротив него прочерк.
+
+В качестве ответа прикрепите файл с полученными данными о среднем росте.
+'''
+
+# Делаем словарь {1:[0,0], 2:[0,0]... 11:[0,0]}, где [0:0] = [сумма ростов : кол-во учеников]
+tab = {i: [0, 0] for i in range(1, 12)}
+
+with open('dataset_3380_5.txt') as inf:
+	# Заполняем словарь:
+	for i in inf:
+		line = i.strip().split('\t')
+		tab[int(line[0])][0] += int(line[2])  # tab[класс][0] += рост ученика
+		tab[int(line[0])][1] += 1  # tab[класс][1] += 1 (счетчик учеников в классе)
+
+	# Вывод:
+	for i in tab.keys():
+		if tab[i][1] == 0:
+			print(i, '-')  # распечатываем класс, в котором нет учеников
+		else:
+			# считаем и распечатываем средний рост для i-го класса:
+			print(i, (tab[i][0] / tab[i][1]))
